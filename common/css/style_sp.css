@@ -1,0 +1,768 @@
+@charset "utf-8";
+/* CSS Document */
+/* リセットcss */
+@media screen and (max-width: 767px) {
+
+  * {
+    margin: 0;
+    padding: 0;
+
+  }
+
+  body {
+    font-family: YuGothic, 'Yu Gothic', 'Hiragino Kaku Gothic ProN', ' ヒラギノ角ゴProN W3', ' メイリオ ', Meiryo, sans-serif;
+
+    margin: 0 auto;
+  }
+
+  img {
+    display: block;
+  }
+
+  a {
+    text-decoration: none;
+
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  /*header*/
+
+  header {
+    margin: 0 auto;
+    height: 128px;
+    background-color: #778E63;
+  }
+
+  .logo {
+    max-width: 300px;
+    padding: 30px;
+  }
+
+  .logo p {
+    font-size: 14px;
+    color: #212f19;
+  }
+
+  h1 span {
+    font-size: 20px;
+  }
+
+  h1 a {
+    color: #212f19;
+    font-size: 30px;
+    font-family: 'Noto Serif SC', serif;
+  }
+
+
+
+  /*ハンバーガーメニュー部分ここから*/
+  #nav-toggle {
+    background-color: #212f19;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    top: 15px;
+    right: 19px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border-radius: 30px;
+  }
+
+  #nav-toggle>div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+
+  #nav-toggle span {
+    width: 80%;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    left: 10%;
+    transition: all .6s ease;
+    top: -22px;
+    margin-top: 30%;
+  }
+
+  #nav-toggle span:nth-child(1) {
+    top: 0;
+  }
+
+  #nav-toggle span:nth-child(2) {
+    top: 10px;
+  }
+
+  #nav-toggle span:nth-child(3) {
+    top: 20px;
+  }
+
+
+  .open #nav-toggle span {
+    background: #fff;
+  }
+
+  .open #nav-toggle span:nth-child(1) {
+    top: 15px;
+    transform: rotate(45deg);
+  }
+
+  .open #nav-toggle span:nth-child(2) {
+    top: 15px;
+    width: 0;
+    left: 50%;
+  }
+
+  .open #nav-toggle span:nth-child(3) {
+    top: 15px;
+    transform: rotate(-45deg);
+  }
+
+  /*ハンバーガーメニュー中身ここから*/
+  #gNavi,
+  #shoptime {
+    background: #212f19;
+    color: #fff;
+    position: fixed;
+    z-index: 990;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 25px;
+  }
+
+  #shoptime {
+    width: 100%;
+    top: 50%;
+    bottom: 0;
+    left: 0;
+    transform: translateX(100vw);
+    transition: all .3s linear;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .job_time {
+    font-size: 14px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    row-gap: 10px;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+
+  .job_time span {
+    background-color: #fff;
+    padding: 5px;
+    margin-right: 4px;
+    white-space: nowrap;
+    color: #212F19;
+  }
+
+  .job_time p {
+    margin-right: 4px;
+  }
+
+  .tel_btn {
+    background-color: #fff;
+    max-width: 277px;
+    max-height: 83px;
+    border-radius: 67px;
+    color: #212F19;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px 40px;
+    font-size: 30px;
+  }
+  .tel_btn p {
+    font-size: 25px;
+  }
+  .tel_btn span {
+    font-size: 16px;
+  }
+  .tel_btn a {
+    color: #212F19;
+  }.tel a {
+    color: #212F19;
+  }
+  #gNavi {
+    width: 100%;
+    top: 0;
+    left: 0;
+    bottom: 40%;
+    font-size: 30px;
+    transform: translateX(100vw);
+    transition: all .3s linear;
+  }
+
+  #gNavi.is-active,
+  #shoptime.is-active {
+    transform: translateX(0);
+  }
+
+  #gNavi ul {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  #gNavi li {
+    padding: 20px 50px;
+  }
+
+  #gNavi a {
+    color: #fff;
+  }
+
+  .gnav_ttl::before {
+    content: attr(data-title);
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+    font-size: 13px;
+    color: #fff;
+    font-weight: 100;
+    margin-top: -9px;
+  }
+
+.sp {
+  font-size: 30px;
+  color:#212F19;
+}
+
+.sp p {
+  font-size: 16px;
+}
+
+  /*mainPhoto部分ここから*/
+
+  .kv {
+    position: relative;
+    padding-top: 1px;
+  }
+
+  .kv_text {
+    font-size: 20px;
+    font-weight: 300;
+    color: #000;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 15px;
+    position: absolute;
+  }
+
+  .slider .image:nth-of-type(1) .kv_text {
+    top: 50%;
+    left: 3%;
+  }
+
+  .slider .image:nth-of-type(2) .kv_text {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+  }
+
+  .slider .image:nth-of-type(3) .kv_text {
+    position: absolute;
+    top: 55%;
+    left: 25%;
+  }
+
+  .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .slider .image {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 0;
+    animation: slideshow 15s linear 10s infinite;
+  }
+
+  .slider .image:nth-of-type(1) {
+    animation-delay: 0s;
+    background-image: url(/common/images/consept07.jpg);
+    background-position: right 25% bottom 29%;
+  }
+
+  .slider .image:nth-of-type(2) {
+    animation-delay: 5s;
+    background-image: url(/common/images/consept06.jpg);
+    background-position: left 35% bottom 29%;
+  }
+
+  .slider .image:nth-of-type(3) {
+    animation-delay: 10s;
+    background-image: url(/common/images/consept05.jpg);
+    background-position: center;
+  }
+
+  /* アニメーション定義 */
+  @keyframes slideshow {
+
+    0%,
+    {
+    opacity: 0;
+
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  30% {
+    opacity: 1;
+
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  100% {}
+}
+
+/*h2部分ここから*/
+
+h2 {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 35px;
+  position: relative;
+  margin-top: 116px;
+  margin-bottom: 30px;
+}
+
+h2::after {
+  position: absolute;
+  content: "";
+  width: 45px;
+  height: 8px;
+  background-color: #212F19;
+  top: -33%;
+  left: 50%;
+  transform: translatex(-50%);
+}
+
+h3 {
+  font-size: 32px;
+  position: relative;
+  margin-top: 70px;
+}
+
+h3:first-child {
+  margin-top: 0;
+}
+
+.menu_ttl::after {
+  content: attr(data-title);
+  position: absolute;
+  font-size: 13px;
+  color: #333;
+  font-weight: 100;
+  top: 39%;
+  margin-left: 10px;
+
+}
+
+/*menu部分ここから*/
+
+.tabs {
+  margin-top: 50px;
+  padding-bottom: 40px;
+  background-color: #fff;
+  border: #212F19 1px solid;
+  margin: 0 auto;
+}
+
+.tab_item {
+  width: calc(100%/2);
+  height: 94px;
+  background-color: #E5E5E5;
+  line-height: 94px;
+  font-size: 22px;
+  text-align: center;
+  color: #212F19;
+  display: block;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.tab_item:hover {
+  opacity: 0.75;
+}
+
+input[name="tab_item"] {
+  display: none;
+}
+
+.tab_content {
+  display: none;
+  padding: 40px 40px 0;
+  clear: both;
+  overflow: hidden;
+}
+
+.tab_content_box {
+  background-color: #FBFAF9;
+  border-top: 1px solid #212F19;
+  border-bottom: 1px solid #212F19;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.tab_content_menu {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  line-height: 2.5em;
+}
+
+.tab_content_menu::after {
+  content: "";
+  position: absolute;
+  border-bottom: dotted 2px #000;
+  display: block;
+  z-index: 1;
+  top: 50%;
+  width: 100%;
+}
+
+.tab_content_menu dt {
+  z-index: 2;
+  background-color: #FBFAF9;
+  padding: 5px;
+}
+
+.tab_content_menu dd {
+  z-index: 2;
+  background-color: #FBFAF9;
+  padding: 5px;
+}
+
+/*選択されているタブのコンテンツのみを表示*/
+#all:checked~#all_content,
+#programming:checked~#programming_content,
+#design:checked~#design_content {
+  display: block;
+}
+
+/*選択されているタブのスタイルを変える*/
+.tabs input:checked+.tab_item {
+  background-color: #212F19;
+  color: #fff;
+}
+
+.menu_price {
+  padding: 20px;
+  line-height: 3em;
+}
+
+.menu_price>li {
+  display: flex;
+  justify-content: space-between;
+}
+
+#menu figcaption {
+  box-sizing: border-box;
+  padding: 20px;
+  line-height: 3em;
+
+}
+
+
+#menu {
+  margin-top: 500px;
+}
+
+/*top部分ここから*/
+#page-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 14px;
+  line-height: 1;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #212F19;
+  width: 90px;
+  height: 90px;
+  opacity: 0.9;
+  transition: all .3s ease;
+  border-radius: 90px;
+}
+
+#page-top a {
+  color: #fff;
+  text-align: center;
+}
+
+#page-top img {
+  width: 25px;
+  margin: 0 auto;
+}
+
+.wrapper {
+  padding: 0 10px;
+}
+
+#page-top:hover {
+  text-decoration: none;
+  opacity: .5;
+}
+
+/*news部分ここから*/
+#news {
+  margin: 0 calc(50% - 50vw);
+  background-color: #F7F5F4;
+  padding-bottom: 60px;
+  margin-top: 139px;
+  padding-top: 72px;
+}
+
+.news_bg {
+  margin-top: 0;
+}
+
+#newstable li {
+  display: flex;
+  flex-direction: column;
+  height: 123px;
+  border-bottom: 1px solid #000;
+  padding: 20px;
+  align-items: center;
+}
+
+#news ul {
+  border-style: none;
+}
+
+#news time {
+  font-weight: bold;
+}
+
+#news a {
+  color: black;
+
+}
+
+/*Contact部分ここから*/
+
+#Contactbox {
+  background-image: url(../images/ricrut.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+  margin: 0 calc(50% - 50vw);
+  display: flex;
+  position: relative;
+}
+
+
+.contactarea {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 2em;
+}
+
+.contactarea::before {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: ' ';
+  z-index: 0;
+}
+
+.contactarea p {
+  color: #fff;
+  z-index: 1;
+}
+
+.Contactbutton {
+  width: 255px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  background-color: #212f19;
+  border: 2px solid #fff;
+  color: #fff;
+  margin-top: 30px;
+  font-weight: bold;
+  z-index: 1;
+}
+
+
+.Contactbutton:hover {
+  background-color: white;
+  border: 2px solid #212f19;
+  color: #212f19;
+  font-weight: bold;
+}
+
+/*access部分ここから*/
+
+#access {
+  display: grid;
+  column-gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 187px;
+}
+
+.google-map {
+  width: 100%;
+}
+
+#address {
+  display: grid;
+  row-gap: 40px;
+}
+
+#address span {
+  background-color: #212F19;
+  color: #fff;
+  font-weight: bold;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.addressbutton-area {
+  margin-bottom: 50px;
+}
+
+.addressarea p {
+  margin-top: 10px;
+}
+
+.tel p span {
+  font-size: 16px;
+}
+
+.tel p {
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.addressbutton {
+  display: block;
+  width: 255px;
+  height: 60px;
+  margin: 0 auto;
+  text-decoration: none;
+  line-height: 60px;
+  text-align: center;
+  padding: 5px;
+  background-color: #212f19;
+  color: #fff;
+  font-weight: bold;
+  border: 2px solid #fff;
+}
+
+
+.addressbutton:hover {
+  background-color: white;
+  border: 2px solid #212f19;
+  color: #212F19;
+}
+
+
+/*フッター部分ここから*/
+footer {
+  max-width: 100vw;
+  max-height: 279px;
+  background-color: #778E63;
+  padding: 30px;
+}
+
+footer #gNavi {
+  margin-top: 0;
+}
+
+#copyright {
+  width: 100%;
+  text-align: center;
+  color: #212F19;
+}
+
+/*電話ボタン部分ここから*/
+.footerbutton {
+  display: inline-block;
+  width: 200px;
+  height: 54px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 54px;
+  outline: none;
+  margin-top: 20px;
+}
+
+.footerbutton::before,
+.footerbutton::after {
+  position: absolute;
+  z-index: -1;
+  display: block;
+  content: '';
+}
+
+.footerbutton,
+.footerbutton::before,
+.footerbutton::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.footerbutton {
+  background-color: #212f19;
+  ;
+  border: 2px solid white;
+  color: #fff;
+  line-height: 50px;
+  margin-bottom: 10px;
+}
+
+.footerbutton:hover {
+  background-color: white;
+  border-color: #212f19;
+  color: #212f19;
+}
+
+}
