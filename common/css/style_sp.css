@@ -595,6 +595,7 @@ input[name="tab_item"] {
   justify-content: center;
   align-items: center;
   line-height: 2em;
+ margin: 0 auto;
 }
 
 .contactarea::before {
