@@ -765,6 +765,6 @@ footer #gNavi {
   color: #212f19;
 }
 a[href^="tel:"]{
-  pointer-events: none;
+  pointer-events: auto;
 }
 }
