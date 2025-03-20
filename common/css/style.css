@@ -686,5 +686,7 @@ footer .navarea {
   text-align: center;
   color: #212F19;
 }
-
+a[href^="tel:"]{
+  pointer-events: none;
+}
 }
