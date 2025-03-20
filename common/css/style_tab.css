@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 /* リセットcss */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1279px){
   * {
     margin: 0;
     padding: 0;
@@ -224,8 +224,9 @@
   }
 
   .wrapper {
-    width: 700px;
     margin: 0 auto;
+    max-width: 100%;
+    padding: 0 40px;
   }
 
   /*mainPhoto部分ここから*/
@@ -286,17 +287,17 @@
 
   .slider .image:nth-of-type(1) {
     animation-delay: 0s;
-    background-image: url(/common/images/consept07.jpg);
+    background-image: url(../images/consept07.jpg);
   }
 
   .slider .image:nth-of-type(2) {
     animation-delay: 5s;
-    background-image: url(/common/images/consept06.jpg);
+    background-image: url(../images/consept06.jpg);
   }
 
   .slider .image:nth-of-type(3) {
     animation-delay: 10s;
-    background-image: url(/common/images/consept05.jpg);
+    background-image: url(../images/consept05.jpg);
   }
 
 
@@ -612,7 +613,7 @@ input[name="tab_item"] {
 
 #access {
   display: grid;
-  grid-template-columns: 1fr 500px;
+  grid-template-columns: 1fr 50%;
   column-gap: 20px;
   justify-content: center;
   align-items: center;
@@ -668,7 +669,9 @@ input[name="tab_item"] {
   border: 2px solid #212f19;
   color: #212F19;
 }
-
+.google-map {
+  max-width: 100%;
+}
 
 /*フッター部分ここから*/
 footer {

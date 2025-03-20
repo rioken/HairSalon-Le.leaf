@@ -31,7 +31,7 @@ $(function () {
 }());
 
 
-//skideshow//
+//slider/
 const smoothScrollTrigger = document.querySelectorAll('a[href^="#"]');
 for (let i = 0; i < smoothScrollTrigger.length; i++) {
     smoothScrollTrigger[i].addEventListener('click', (e) => {
